@@ -1,26 +1,31 @@
-# Vue Enterprise Boilerplate
+# 3D Challenge
+
+# Project Description
+This project is a Code Challenge utilizing the following frameworks and libraries:
+
+Vue.js v2.6/x
+https://vuejs.org/
+https://github.com/vuejs/vue
+
+Three.js
+https://threejs.org/
+https://github.com/mrdoob/three.js/
+
+# Commands
 
 # start dev server
 
 yarn dev --open
 
+# build for production dist
 
-[![CircleCI](https://circleci.com/gh/chrisvfritz/vue-enterprise-boilerplate/tree/master.svg?style=svg)](https://circleci.com/gh/chrisvfritz/vue-enterprise-boilerplate/tree/master)
-
-> This is an ever-evolving, very opinionated architecture and dev environment for new Vue SPA projects using [Vue CLI](https://github.com/vuejs/vue-cli). Questions, feedback, and for now, even bikeshedding are welcome. 😄 If you'd like to increase the time I can spend on this project, as well as other Vue resources, **please consider becoming a [sponsor on Patreon](https://www.patreon.com/chrisvuefritz)**. :pray:
-
-## Features
-
-- [**Thorough documentation**](#documentation): Written with the same care as Vue's core docs to quickly train new team members and consolidate knowledge.
-- [**Guaranteed consistency**](docs/linting.md): Opinionated linting for Vue, JavaScript/JSON, SCSS, and Markdown, integrated into Visual Studio Code and run against staged files on pre-commit.
-- [**First-class tests**](docs/tests.md): Practice test-driven development with both unit and end-to-end tests. Unit tests with Jest live as first-class citizens alongside your source files, while Cypress provides reliable end-to-end tests in an intuitive GUI for development.
-- [**Speedy development**](docs/development.md): Between [configurable generators](docs/development.md#generators), [handy aliases](docs/development.md#aliases), and [global base components](docs/development.md#base-components), your productivity will skyrocket.
+yarn build
 
 ## Getting started
 
 ```bash
 # 1. Clone the repository.
-git clone https://github.com/chrisvfritz/vue-enterprise-boilerplate.git my-new-project
+git clone https://github.com/mhanger/3D-Challenge.git my-new-project
 
 # 2. Enter your newly-cloned folder.
 cd my-new-project
@@ -39,6 +44,29 @@ rm _start.js
 # 6. Read the documentation linked below for "Setup and development".
 ```
 
+# Demo of Project
+
+https://challenge-3d.herokuapp.com
+
+# Technical
+
+based on Vue Enterprise Boilerplate
+https://github.com/chrisvfritz/vue-enterprise-boilerplate
+
+Structure of Three.js code based on
+https://medium.com/@soffritti.pierfrancesco/how-to-organize-the-structure-of-a-three-js-project-77649f58fa3f
+I am using the pattern of creating mixins with a SceneManager, Camera, Lights, etc. This improves the readibility and scaleability.
+
+I chose to place the scss directly in the vue files rather than break out a separate stylesheet, partly due to time constraints, and partly because I prefer the simplicity of having the styling in the same place as the template.
+
+The enterprise boilerplate has some built in patterns that are a bit different from the standard vuex structure.
+
+There is an extra layer in /state/helpers.js which helps to organize the standard vuex mapState, mapGetters, mapActions a bit better, and makes calling them simplier within the components, such as home.vue for example.
+
+I probably could have just used the standard vue cli for this project, but wanted to evaluate this boilerplate for large scale applications.
+
+With more time, I would like to have created more interaction with the store rather than just using eventBus to pass the button action around.
+
 ## Documentation
 
 This project includes a `docs` folder with more details on:
@@ -54,32 +82,15 @@ This project includes a `docs` folder with more details on:
 1.  [Building and deploying to production](docs/production.md)
 1.  [Troubleshooting](docs/troubleshooting.md)
 
-## FAQ
+## Extant websites
+http://2015.usopen.com/
 
-**Why would I use this boilerplate instead of generating a new project with [Vue CLI](https://github.com/vuejs/vue-cli) directly?**
+https://parts.ford.com/en.html
 
-Vue CLI aims for flexibility, making it as simple as possible for any team to set up a new project, no matter how big or small, whether it's an app or a library, or what languages and technologies are being used.
+https://www.thenorthface.com/shop/mens-jackets-vests-vests
 
-This boilerplate makes more assumptions. It assumes you're building a large app, possibly developed by a large team. It also makes a lot of default choices for you, based on what tends to work well for large, enterprise projects. At the same time, it aims to educate and empower users to configure these defaults to ideally suit their specific app and team.
+## LinkedIn Profile
 
-**Why would I use this boilerplate instead of [Nuxt](https://nuxtjs.org/)?**
+https://www.linkedin.com/in/marc-hanger/
 
-Nuxt is like a really smart personal assistant, immediately making you more productive by taking care of many concerns _for you_. This boilerplate is more of a personal coach, aiming to educate and empower users to essentially configure their _own_ framework, ideally suited to their app and team.
-
-If what you're building is very well-defined, with requirements and technical challenges that won't drastically change over time, I'd probably recommend Nuxt instead. For the needs of common applications, it's more than up to the task. If you're a startup trying to prove product-market fit and your primary goal is initial development speed, that's also a point in Nuxt's favor.
-
-Here's when you might prefer building a project off the boilerplate instead:
-
-- The requirements for the product are very likely to change over time and you want to maintain maximum flexibility and control.
-- You'd like to focus on developing skills that will transfer across _any_ Vue project.
-- You're working in a large team, so need tooling to help everyone avoid common mistakes, write in a consistent style, and avoid bikeshedding in PRs.
-
-Finally, it's not an either-or situation. This boilerplate demonstrates many useful patterns for building robust applications that can also be applied to Nuxt apps. That means you could build a project with Nuxt, while still using this boilerplate as a study guide.
-
-**Can you build a Nuxt version of this boilerplate?**
-
-I have no plans to personally, but you can find Nuxt forks at [debs-obrien/nuxt-boilerplate-project](https://github.com/debs-obrien/nuxt-boilerplate-project) and [wemake-services/wemake-vue-template](https://github.com/wemake-services/wemake-vue-template).
-
-**This isn't exactly what I'm looking for. Where can I find other boilerplates and similar projects?**
-
-See the [awesome-vue](https://github.com/vuejs/awesome-vue#scaffold) repo for other great projects in the Vue ecosystem.
+****
