@@ -61,7 +61,7 @@ I chose to place the scss directly in the vue files rather than break out a sepa
 
 The enterprise boilerplate has some built in patterns that are a bit different from the standard vuex structure.
 
-There is an extra layer in /state/helpers.js which helps to organize the standard vuex mapState, mapGetters, mapActions a bit better, and makes calling them simplier within the components, such as home.vue for example.
+There is an extra layer in /state/helpers.js which helps to organize the standard vuex mapState, mapGetters, mapActions a bit better, and makes calling them easier within the components, such as home.vue for example.
 
 I probably could have just used the standard vue cli for this project, but wanted to evaluate this boilerplate for large scale applications.
 
