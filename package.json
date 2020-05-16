@@ -17,6 +17,7 @@
     "lint:all:markdownlint": "yarn lint:markdownlint \"docs/*.md\" \"*.md\"",
     "lint:all:prettier": "yarn lint:prettier \"**/*.{js,json,css,scss,vue,html,md}\"",
     "lint": "run-s lint:all:*",
+    "start": "node server.js",
     "test:unit": "cross-env VUE_APP_TEST=unit vue-cli-service test:unit",
     "test:unit:file": "yarn test:unit --bail --findRelatedTests",
     "test:unit:watch": "yarn test:unit --watch --notify --notifyMode change",
