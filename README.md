@@ -83,11 +83,15 @@ The boilerplate includes a `docs` folder with more details on:
 1.  [Troubleshooting](docs/troubleshooting.md)
 
 ## Extant websites
-http://2015.usopen.com/
+http://2015.usopen.com/en_US/players/bios/34046.html
+I did the players section as well as worked on the main scoreboard.
+New features included a live shots and stats section.  I worked with the back-end team on json schemas and coded all the front-end interactions and styling.
 
 https://parts.ford.com/en.html
+I was the lead architect for this i18n and RWD project.  Build in AngularJS with IBM WebSphere Commerce.
 
 https://www.thenorthface.com/shop/mens-jackets-vests-vests
+Redesign of thenorthface.com for 2018 Christmas season.
 
 ## LinkedIn Profile
 
