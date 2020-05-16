@@ -1,3 +1,11 @@
+import * as swatchesModule from './swatches'
+
+describe('@state/modules/users', () => {
+  it('exports a valid Vuex module', () => {
+    expect(swatchesModule).toBeAVuexModule()
+  })
+})
+
 const validSwatchExample = {
   id: 1,
   hexcode: '#990000',
