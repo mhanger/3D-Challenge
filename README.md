@@ -1,9 +1,9 @@
 # 3D Challenge
 
-# Project Description
+## Project Description
 This project is a Code Challenge utilizing the following frameworks and libraries:
 
-Vue.js v2.6/x
+Vue.js v2.6.x
 https://vuejs.org/
 https://github.com/vuejs/vue
 
@@ -11,13 +11,13 @@ Three.js
 https://threejs.org/
 https://github.com/mrdoob/three.js/
 
-# Commands
+## Commands
 
-# start dev server
+### start dev server
 
 yarn dev --open
 
-# build for production dist
+### build for production dist
 
 yarn build
 
@@ -44,11 +44,11 @@ rm _start.js
 # 6. Read the documentation linked below for "Setup and development".
 ```
 
-# Demo of Project
+## Demo of Project
 
 https://challenge-3d.herokuapp.com
 
-# Technical
+## Technical
 
 based on Vue Enterprise Boilerplate
 https://github.com/chrisvfritz/vue-enterprise-boilerplate
@@ -69,7 +69,7 @@ With more time, I would like to have created more interaction with the store rat
 
 ## Documentation
 
-This project includes a `docs` folder with more details on:
+The boilerplate includes a `docs` folder with more details on:
 
 1.  [Setup and development](docs/development.md)
 1.  [Architecture](docs/architecture.md)
