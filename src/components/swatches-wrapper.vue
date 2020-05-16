@@ -51,9 +51,11 @@
 
   @media only screen and (max-width: 1250px) {
     .swatches-container {
+      bottom: 0;
       display: block;
+      left: 0;
       margin-top: -5px;
-      position: static;
+      position: fixed;
       text-align: center;
       transform: none;
       width: 100%;

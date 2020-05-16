@@ -21,6 +21,7 @@ export const camera = {
       this.controls = new OrbitControls( this.camera, this.container )
       this.controls.minDistance = 2
       this.controls.maxDistance = 25
+      this.controls.maxPolarAngle = (Math.PI/2) -0.01;
       this.controls.enableDamping = true
       this.controls.autoRotate = true
       this.controls.autoRotateSpeed = 0.75
