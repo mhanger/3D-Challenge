@@ -2,10 +2,10 @@
 // generated when starting the dev server or a build.
 
 module.exports = {
-  baseUrl: './3d/',
+  baseUrl: '.',
   include: ['src/**/*', 'tests/**/*'],
   compilerOptions: {
-    baseUrl: './3d/',
+    baseUrl: '.',
     target: 'esnext',
     module: 'es2015',
     // ...
