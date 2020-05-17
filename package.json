@@ -29,9 +29,6 @@
     "docs": "vuepress dev",
     "docker": "docker-compose exec dev yarn"
   },
-  "gitHooks": {
-    "pre-commit": "cross-env PRE_COMMIT=true lint-staged"
-  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.27",
     "@fortawesome/free-solid-svg-icons": "5.12.1",
@@ -40,10 +37,12 @@
     "core-js": "3.6.4",
     "date-fns": "2.10.0",
     "express": "4.17.x",
+
     "lodash": "4.17.15",
     "normalize.css": "8.0.1",
     "nprogress": "0.2.0",
     "three": "0.116.1",
+    "three-gltf-loader": "1.111.0",
     "three-orbitcontrols": "2.110.3",
     "tinycolor2": "1.3.0",
     "vue": "2.6.11",

@@ -1,4 +1,4 @@
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import GLTFLoader from 'three-gltf-loader';
 
 export const gltfLoader = {
   methods: {
