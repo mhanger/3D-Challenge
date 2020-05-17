@@ -1,5 +1,5 @@
 <template>
-  <div class="color-tile" :style="{ backgroundColor: swatch.hexcode }" @click="changeColor">
+  <div class="color-tile" :style="tileColor" @click="changeColor">
    <span>{{swatch.text}}</span>
    </div>
 </template>
@@ -10,8 +10,17 @@
   export default {
     name: 'Swatch',
     props: {
-      swatch: Object,
-      default: {}
+      swatch: {
+      type: Object,
+      required: true
+      }
+    },
+    computed: {
+      tileColor() {
+        return {
+          backgroundColor: this.swatch.hexcode
+        }
+      }
     },
     methods: {
       changeColor() {
@@ -42,6 +51,7 @@
   &:first-of-type {
     margin-left: 0;
     border-radius: 50%;
+
     span {
       color: #ccc;
     }
@@ -50,6 +60,7 @@
   &:last-of-type {
     background-color: #c73e1d;
     background-image: linear-gradient(315deg, #c73e1d 0%, #a23b72 37%, #2e86ab 100%);
+
     span {
       color: #9999cc;
     }
