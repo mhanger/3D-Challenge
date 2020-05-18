@@ -11,7 +11,7 @@ export const camera = {
   },
   methods: {
     createCamera(sceneDimensions) {
-      this.camera = new THREE.PerspectiveCamera( 70, sceneDimensions.width / sceneDimensions.width, 1, 1000 )
+      this.camera = new THREE.PerspectiveCamera( 70, sceneDimensions.width / sceneDimensions.height, 1, 1000 )
       this.camera.position.set( 0, 2, 5 )
       this.camera.lookAt(new THREE.Vector3(0, 0, 0));
 
@@ -19,7 +19,7 @@ export const camera = {
     },
     createControls() {
       this.controls = new OrbitControls( this.camera, this.container )
-      this.controls.minDistance = 2
+      this.controls.minDistance = 4
       this.controls.maxDistance = 25
       this.controls.maxPolarAngle = (Math.PI/2) -0.01;
       this.controls.enableDamping = true

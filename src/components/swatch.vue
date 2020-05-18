@@ -43,10 +43,10 @@
   cursor: pointer;
   display: flex;
   float: left;
-  height: 80px;
+  height: 85px;
   margin-left: 20px;
   padding: 5px;
-  width: 80px;
+  width: 85px;
   white-space: normal;
 
   span {

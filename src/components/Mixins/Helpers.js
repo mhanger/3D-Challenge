@@ -32,15 +32,32 @@ export const helpers = {
       this.changeTexture(5, color);
     },
     checkClientHeight(sceneDimensions) {
-      if (window.innerHeight < (sceneDimensions.width + 270)) {
-        sceneDimensions.width = window.innerHeight - 270;
-     }
+      var newmaxHeight = window.innerHeight-229;
+      if (window.innerHeight < window.innerWidth) {
+        sceneDimensions.width = window.innerWidth-150;
+        sceneDimensions.height = newmaxHeight;
+      } else {
+        sceneDimensions.height = window.innerHeight-229;
+        sceneDimensions.width = window.innerWidth;
+      }
      return sceneDimensions;
     },
     scaleToFit(container, node) {
       var rect = container.getBoundingClientRect();
       node.width = rect.width;
       node.height = rect.height;
-    }
+    },
+    throttle (callback, limit) {
+      var wait = false;
+      return function () {
+          if (!wait) {
+              callback.call();
+              wait = true;
+              setTimeout(function () {
+                  wait = false;
+              }, limit);
+          }
+      }
+  }
   }
 }

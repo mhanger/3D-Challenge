@@ -31,7 +31,8 @@ export const sceneManager = {
           this.render()
       })
 
-      window.addEventListener( 'resize', this.resizeWindowHandler, false);
+      window.addEventListener("resize", this.throttle(this.resizeWindowHandler, 100));
+
       },
 
       createScene() {
@@ -40,7 +41,7 @@ export const sceneManager = {
       },
       createRenderer(sceneDimensions) {
         this.renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } )
-        this.renderer.setSize(sceneDimensions.width, sceneDimensions.width)
+        this.renderer.setSize(sceneDimensions.width, sceneDimensions.height)
         this.renderer.setPixelRatio( window.devicePixelRatio )
         this.renderer.autoClear = false;
         this.renderer.setClearColor(0x000000, 0.0)

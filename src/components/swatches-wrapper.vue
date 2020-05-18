@@ -55,15 +55,6 @@
     }
   }
 
-  @media only screen and (max-width: 1250px) {
-    .swatches-container {
-      display: block;
-      margin-top: -5px;
-      position: static;
-      white-space: nowrap;
-    }
-  }
-
   .clearfix::after {
     content: "";
     clear: both;
