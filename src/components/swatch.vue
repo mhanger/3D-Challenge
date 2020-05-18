@@ -1,11 +1,12 @@
 <template>
-  <div class="color-tile" :style="tileColor" @click="changeColor">
+  <div class="color-tile" :style="tileColor" @click="updateColor">
    <span>{{swatch.text}}</span>
    </div>
 </template>
 
 <script>
   import { EventBus } from '@eventBus';
+  import { colorMethods } from '@state/helpers'
 
   export default {
     name: 'Swatch',
@@ -15,6 +16,7 @@
       required: true
       }
     },
+
     computed: {
       tileColor() {
         return {
@@ -23,7 +25,9 @@
       }
     },
     methods: {
-      changeColor() {
+      ...colorMethods,
+      updateColor() {
+        this.changeColor(this.swatch.id, this.swatch.hexcode);
         EventBus.$emit('colorSelected', this.swatch.id, this.swatch.hexcode)
       }
     }

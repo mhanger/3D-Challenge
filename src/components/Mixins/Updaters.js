@@ -3,14 +3,12 @@ import * as THREE from 'three';
 export const updaters = {
   methods: {
     updateScene(id, color) {
-      this.colorId = color;
       switch (id) {
           case 1:
               this.updatePrimitive(color);
           break;
           case 2:
           case 3:
-              // this.updateModel(color);
               this.changeTexture(2, color);
           break;
           case 4:
@@ -47,7 +45,6 @@ export const updaters = {
       });
     },
     updatePrimitive(color) {
-      console.log('uodate Primitive');
       var sphere = this.scene.getObjectByName('primitive-sphere');
       sphere.material.color.setStyle(color);
     },
@@ -56,7 +53,6 @@ export const updaters = {
       model.traverse(function(child){
           if(child instanceof THREE.Mesh){
               child.material.color.setStyle(color);
-              console.log('material color set to - ' + color);
           }
       });
       this.changeTexture();

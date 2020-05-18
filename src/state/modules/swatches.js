@@ -36,8 +36,7 @@ export const state = {
         name: 'Random',
         text: "Random Cube"
       }
-    ],
-    colorId: 1
+    ]
 }
 
 export const getters = {
@@ -45,14 +44,6 @@ export const getters = {
 }
 
 export const mutations = {
-  setColor(state, color) {
-    state.color.colorId = color;
-  },
-
-  editColor(state, color) {
-    const index = state.swatches.findIndex(s => s.id === color.id);
-    state.color.colorId = state.swatches[index].hexcode;
-  }
 }
 
 export const actions = {

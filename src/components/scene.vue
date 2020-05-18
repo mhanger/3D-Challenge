@@ -1,11 +1,12 @@
 <template>
     <div>
-    <section id="scene" ref="scene" class="scene"></section>
+        <section id="scene" ref="scene" class="scene"></section>
     </div>
 </template>
 
 <script>
     import { EventBus } from '@eventBus';
+    import { colorComputed, colorMethods } from '@state/helpers'
     import { sceneManager } from './Mixins/SceneManager';
 
     export default {
@@ -22,21 +23,30 @@
                 gltfLoader: null
             }
         },
+        computed: {
+         ...colorComputed
+        },
+
         created() {
-            EventBus.$on('colorSelected', (id, color) => {
-                this.updateScene(id, color);
+            EventBus.$on('colorSelected', (getColor, color) => {
+                this.updateScene(getColor, color);
             })
         },
-         beforeDestroy() {
+        beforeDestroy() {
             EventBus.$off(
-                "colorSelected", "loadingModel"
+                "colorSelected, modelLoaded"
             )
         },
         mounted() {
             var canvas = this.$refs.scene;
             this.sceneManager(canvas);
         },
+
         methods: {
+            ...colorMethods,
+            changeScene(id) {
+
+            },
             update() {
                 this.controls.update()
             },

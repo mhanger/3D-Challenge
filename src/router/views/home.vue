@@ -14,7 +14,7 @@
   import Layout from '@layouts/main.vue'
 
   import { EventBus } from '@eventBus';
-  import { swatchesComputed } from '@state/helpers'
+  import { swatchesComputed, colorComputed } from '@state/helpers'
   import Scene from '@components/scene.vue'
   import SwatchesWrapper from '@components/swatches-wrapper.vue'
   import Loading from './_loading.vue'
@@ -24,26 +24,25 @@
       title: '3D Challenge',
       meta: [{ name: 'description', content: appConfig.description }],
     },
+    components: { Loading, Layout, SwatchesWrapper, Scene },
     data() {
       return {
         visible: false
       }
     },
-    components: { Loading, Layout, SwatchesWrapper, Scene },
+
     computed: {
       ...swatchesComputed,
+      ...colorComputed
     },
     created() {
-      EventBus.$on('colorSelected', (value) => {
-        this.colorId = value
-      });
       EventBus.$on('loadingModel', (boolean) => {
           this.visible = boolean;
       });
     },
     beforeDestroy() {
       EventBus.$off(
-          "colorSelected, loadingModel"
+        "loadingModel"
       );
     },
   }
