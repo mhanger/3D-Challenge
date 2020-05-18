@@ -1,3 +1,13 @@
+<template>
+  <div id="app">
+    <!--
+    Even when routes use the same component, treat them
+    as distinct and create the component again.
+    -->
+    <RouterView :key="$route.fullPath" />
+  </div>
+</template>
+
 <script>
 import appConfig from '@src/app.config'
 
@@ -11,16 +21,6 @@ export default {
   },
 }
 </script>
-
-<template>
-  <div id="app">
-    <!--
-    Even when routes use the same component, treat them
-    as distinct and create the component again.
-    -->
-    <RouterView :key="$route.fullPath" />
-  </div>
-</template>
 
 <!-- This should generally be the only global CSS in the app. -->
 <style lang="scss">

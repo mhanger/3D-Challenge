@@ -43,10 +43,15 @@
   cursor: pointer;
   display: flex;
   float: left;
-  height: 100px;
+  height: 80px;
   margin-left: 20px;
-  width: 100px;
+  padding: 5px;
+  width: 80px;
   white-space: normal;
+
+  span {
+     font-size: 13px;
+  }
 
   &:hover {
     filter: brightness(1.1);

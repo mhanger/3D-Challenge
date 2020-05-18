@@ -1,3 +1,16 @@
+<template>
+  <FontAwesomeIcon
+    v-if="source === 'font-awesome'"
+    v-bind="$attrs"
+    :icon="name"
+  />
+  <span
+    v-else-if="source === 'custom'"
+    v-bind="$attrs"
+    :class="customIconClass"
+  />
+</template>
+
 <script>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library as fontAwesomeIconLibrary } from '@fortawesome/fontawesome-svg-core'
@@ -32,16 +45,3 @@ export default {
   },
 }
 </script>
-
-<template>
-  <FontAwesomeIcon
-    v-if="source === 'font-awesome'"
-    v-bind="$attrs"
-    :icon="name"
-  />
-  <span
-    v-else-if="source === 'custom'"
-    v-bind="$attrs"
-    :class="customIconClass"
-  />
-</template>

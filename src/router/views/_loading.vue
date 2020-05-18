@@ -25,7 +25,7 @@
   @extend %typography-xxlarge;
 
   display: block;
-  margin: 0 auto;
+  margin: 5% auto;
 
   // stylelint-disable-next-line selector-class-pattern
   &:global(.v-enter-active) {

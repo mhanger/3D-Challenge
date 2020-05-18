@@ -32,8 +32,8 @@ export const helpers = {
       this.changeTexture(5, color);
     },
     checkClientHeight(sceneDimensions) {
-      if (window.innerHeight < (sceneDimensions.width + 305)) {
-        sceneDimensions.width = window.innerHeight - 305;
+      if (window.innerHeight < (sceneDimensions.width + 270)) {
+        sceneDimensions.width = window.innerHeight - 270;
      }
      return sceneDimensions;
     },
