@@ -57,7 +57,7 @@
                 });
             },
             resizeWindowHandler() {
-                const sceneDimensions = this.container.getBoundingClientRect();
+                const sceneDimensions = this.checkClientHeight(this.container.getBoundingClientRect());
                 this.camera.aspect = sceneDimensions.width / sceneDimensions.width;
                 this.camera.updateProjectionMatrix()
                 this.renderer.setSize( sceneDimensions.width, sceneDimensions.width )

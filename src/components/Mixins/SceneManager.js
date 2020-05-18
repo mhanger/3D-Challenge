@@ -18,7 +18,7 @@ export const sceneManager = {
       EventBus.$emit("loadingModel", true);
 
       this.container = container;
-      const sceneDimensions = container.getBoundingClientRect();
+      const sceneDimensions = this.checkClientHeight(container.getBoundingClientRect());
 
       this.createScene(sceneDimensions);
       this.createRenderer(sceneDimensions)

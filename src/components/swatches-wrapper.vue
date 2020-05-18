@@ -37,10 +37,9 @@
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
-    position: absolute;
+    position: fixed;
     text-align: middle;
     transform: translateX(-50%);
-
     p {
       display: flex;
       flex-basis: 100%;
@@ -54,8 +53,8 @@
       bottom: 0;
       display: block;
       left: 0;
-      margin-top: -5px;
-      position: fixed;
+      margin-top: -4px;
+      position: static;
       text-align: center;
       transform: none;
       width: 100%;

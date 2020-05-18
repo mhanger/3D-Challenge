@@ -31,6 +31,12 @@ export const helpers = {
       const color = '#' + Math.floor(Math.random()*16777215).toString(16);
       this.changeTexture(5, color);
     },
+    checkClientHeight(sceneDimensions) {
+      if (window.innerHeight < (sceneDimensions.width + 305)) {
+        sceneDimensions.width = window.innerHeight - 305;
+     }
+     return sceneDimensions;
+    },
     scaleToFit(container, node) {
       var rect = container.getBoundingClientRect();
       node.width = rect.width;
