@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import Swatch from '@components/swatch.vue';
+  import Swatch from '@/components/swatch.vue';
 
   export default {
 
@@ -27,7 +27,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '@design';
+
 
   .swatches-container {
     background-color: rgba(255, 255, 255, 1);

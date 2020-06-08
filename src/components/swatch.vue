@@ -5,8 +5,8 @@
 </template>
 
 <script>
-  import { EventBus } from '@eventBus';
-  import { colorMethods } from '@state/helpers'
+
+  import { mapActions } from 'vuex'
 
   export default {
     name: 'Swatch',
@@ -25,17 +25,16 @@
       }
     },
     methods: {
-      ...colorMethods,
+      ...mapActions('scenes', ['changeScene']),
       updateColor() {
-        this.changeColor(this.swatch.id, this.swatch.hexcode);
-        EventBus.$emit('colorSelected', this.swatch.id, this.swatch.hexcode)
+        this.changeScene({id: this.swatch.id, color: this.swatch.hexcode});
       }
     }
   }
 </script>
 
 <style lang="scss">
-  @import '@design';
+
 
 // GRADIENTS
 .color-tile {

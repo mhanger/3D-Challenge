@@ -1,5 +1,5 @@
 import GLTFLoader from 'three-gltf-loader';
-import { EventBus } from '@eventBus';
+import { EventBus } from '@/eventBus/index';
 
 export const gltfLoader = {
   methods: {

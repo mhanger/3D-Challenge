@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-import { EventBus } from '@eventBus';
+import { EventBus } from '@/eventBus/index';
 import { camera } from './Camera';
 import { lights } from './Lights';
 import { helpers } from './Helpers';

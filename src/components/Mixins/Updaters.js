@@ -2,23 +2,6 @@ import * as THREE from 'three';
 
 export const updaters = {
   methods: {
-    updateScene(id, color) {
-      switch (id) {
-          case 1:
-              this.updatePrimitive(color);
-          break;
-          case 2:
-          case 3:
-              this.changeTexture(2, color);
-          break;
-          case 4:
-              this.changeTexture(4);
-          break;
-          case 5:
-              this.generateRandomColor();
-          break;
-      }
-    },
     changeTexture(id, color) {
       color = color === undefined ? '#22f2ff' : color;
       var img = 'initial.png';

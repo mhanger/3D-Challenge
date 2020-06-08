@@ -5,8 +5,8 @@
 </template>
 
 <script>
-    import { EventBus } from '@eventBus';
-    import { colorComputed, colorMethods } from '@state/helpers'
+    import { EventBus } from '@/eventBus/index'
+    import { mapState } from 'vuex'
     import { sceneManager } from './Mixins/SceneManager';
 
     export default {
@@ -14,39 +14,36 @@
         mixins: [ sceneManager ],
         data() {
             return {
-                container: null,
-                camera: null,
-                controls: null,
-                scene: null,
-                renderer: null,
-                colorId: null,
-                gltfLoader: null
             }
         },
         computed: {
-         ...colorComputed
-        },
+            ...mapState('scenes', ['userAction']),
+         },
 
         created() {
-            EventBus.$on('colorSelected', (getColor, color) => {
-                this.updateScene(getColor, color);
-            })
+
         },
-        beforeDestroy() {
-            EventBus.$off(
-                "colorSelected, modelLoaded"
-            )
-        },
+
         mounted() {
             var canvas = this.$refs.scene;
-            this.sceneManager(canvas);
+            this.sceneManager(canvas)
+        },
+
+        beforeDestroy() {
+            EventBus.$off(
+                "modelLoaded"
+            )
+        },
+        watch: {
+            userAction: {
+                handler: function(newVal) {
+                    this.updateScene(newVal.id, newVal.color);
+                },
+                deep: true
+            }
         },
 
         methods: {
-            ...colorMethods,
-            changeScene(id) {
-
-            },
             update() {
                 this.controls.update()
             },
@@ -56,18 +53,32 @@
                     return this.update(this.scene, this.camera);
                 });
             },
+             updateScene(id, color) {
+                switch (id) {
+                    case 1:
+                        this.updatePrimitive(color);
+                    break;
+                    case 2:
+                    case 3:
+                    case 5:
+                        this.changeTexture(2, color);
+                    break;
+                    case 4:
+                        this.changeTexture(4);
+                    break;
+                }
+            },
             resizeWindowHandler() {
                 const sceneDimensions = this.checkClientHeight(this.container.getBoundingClientRect());
                 this.camera.aspect = sceneDimensions.width / sceneDimensions.height;
                 this.camera.updateProjectionMatrix()
                 this.renderer.setSize( sceneDimensions.width, sceneDimensions.height )
-            },
+            }
         }
     }
 </script>
 
 <style lang="scss" scoped>
-  @import '@design';
 
   .scene {
         cursor: grab;
