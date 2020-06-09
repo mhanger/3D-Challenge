@@ -1,4 +1,4 @@
-import GLTFLoader from 'three-gltf-loader';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { EventBus } from '@/eventBus/index';
 
 export const gltfLoader = {
