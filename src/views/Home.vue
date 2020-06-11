@@ -35,7 +35,7 @@
     },
     created() {
       EventBus.$on('loadingModel', (boolean) => {
-          this.visible = boolean;
+        this.visible = boolean;
       });
     },
     beforeDestroy() {

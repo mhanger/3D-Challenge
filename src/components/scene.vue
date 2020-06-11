@@ -21,12 +21,12 @@
          },
 
         created() {
-
+            EventBus.$emit("loadingModel", true);
         },
 
         mounted() {
             var canvas = this.$refs.scene;
-            this.sceneManager(canvas)
+            this.sceneManager(canvas);
         },
 
         beforeDestroy() {
