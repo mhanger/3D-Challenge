@@ -15,7 +15,7 @@
     "@fortawesome/vue-fontawesome": "0.1.9",
     "core-js": "^3.6.5",
     "express": "4.17.x",
-    "three": "0.117.1",
+    "three": "0.125.0",
     "three-orbitcontrols": "2.110.3",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
